@@ -8,6 +8,7 @@
 - [ ] Final captioned walkthrough video regenerated after the audit and uploaded publicly to YouTube or Vimeo (maximum 5 minutes)
 - [x] Public static demo: `https://ai-ops1.github.io/fairchange-agent/`
 - [x] Judge-facing architecture, demo, evidence, deployment, limitations, and user-session notes
+- [x] Privacy-safe public independent-session kit and local report validator published
 - [x] Audited Bedrock AgentCore runtime version 4 deployed; unauthenticated 401 and preserved Cognito fixture/bounded-prompt smoke evidence recorded
 - [x] Production identity provider configured: Amazon Cognito JWT authorizer preserved on AgentCore runtime version 4; IAM-signed invocation is rejected by the OAuth boundary
 - [ ] Independent user sessions with external consultants

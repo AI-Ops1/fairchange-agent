@@ -25,11 +25,12 @@ The fixture is fictional and contains three cases: a routing defect, an included
 - [Evaluation cases](evaluation/README.md) — 20 balanced synthetic cases with isolated labels.
 - [Deployment notes](docs/deployment.md) and [limitations](docs/limitations.md).
 - [User-session notes](docs/user-sessions.md) — current evidence and open validation work.
+- [Independent session kit](docs/external-session.html) and [session protocol](docs/external-session-guide.md) — anonymous, no-login usability session for outside consultants.
 - [Captioned demo video](artifacts/fairchange-demo.mp4) and [video notes](docs/demo-video.md).
 - [Submission copy](docs/submission-copy.md) and [final checklist](docs/submission-checklist.md).
 - [Audit report](docs/audit-2026-09-09.md) — code, runtime, and submission-gate review.
 
-Public demo: [ai-ops1.github.io/fairchange-agent](https://ai-ops1.github.io/fairchange-agent/). It presents synthetic judging fixtures; the AgentCore runtime is protected by a Cognito JWT authorizer and is not proxied through the browser demo.
+Public demo: [ai-ops1.github.io/fairchange-agent](https://ai-ops1.github.io/fairchange-agent/). It presents synthetic judging fixtures; the [independent session kit](https://ai-ops1.github.io/fairchange-agent/external-session.html) collects no network data; the AgentCore runtime is protected by a Cognito JWT authorizer and is not proxied through the browser demo.
 
 ## Deployment status
 

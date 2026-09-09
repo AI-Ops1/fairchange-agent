@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FairChange · independent session</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1220; --panel:#121d2f; --line:#2a3c5c; --text:#edf4ff; --muted:#a9b8cf; --accent:#58c4ff; --good:#7ee2ad; --warn:#ffd27a; }
+    * { box-sizing:border-box; } body { margin:0; background:radial-gradient(circle at 80% 0%, #17365a, var(--bg) 48%); color:var(--text); font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif; }
+    main { max-width:980px; margin:0 auto; padding:42px 22px 72px; } a { color:var(--accent); } h1 { font-size:clamp(32px,6vw,58px); line-height:1.05; margin:12px 0; } h2 { margin:0 0 8px; } p { color:var(--muted); } .eyebrow { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    .panel,.case { background:rgba(18,29,47,.9); border:1px solid var(--line); border-radius:12px; padding:22px; margin:18px 0; } .meta { display:flex; flex-wrap:wrap; gap:12px 24px; color:var(--muted); font-size:14px; } .meta strong { color:var(--text); } .notice { border-left:4px solid var(--warn); padding:12px 16px; background:#292412; color:#ffe7b0; }
+    label { display:block; margin:13px 0 6px; font-weight:650; } select, textarea { width:100%; color:var(--text); background:#0c1627; border:1px solid #405476; border-radius:7px; padding:10px; font:inherit; } textarea { min-height:92px; resize:vertical; } input[type=checkbox] { accent-color:var(--accent); margin-right:8px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:16px; } .evidence { color:var(--muted); margin:8px 0 0; } .buttons { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; } button { cursor:pointer; border:1px solid var(--accent); border-radius:7px; padding:11px 16px; color:var(--text); background:transparent; font:inherit; font-weight:700; } button.primary { color:#06101d; background:var(--accent); } button:disabled { cursor:not-allowed; opacity:.55; }
+    #result { white-space:pre-wrap; overflow:auto; background:#08101c; border-radius:7px; padding:14px; color:var(--good); } .hidden { display:none; } footer { margin-top:30px; color:var(--muted); font-size:13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">FairChange · independent user session</div>
+    <h1>Can a consultant explain the next safe action?</h1>
+    <p>This is an eight-to-ten-minute usability session using fictional records. Decide how each request should be handled, cite the evidence you relied on, and note anything that felt unclear.</p>
+    <div class="notice"><strong>Privacy:</strong> this page does not send data anywhere. Do not enter names, email addresses, company names, customer data, credentials, or other identifying information. At the end, download or copy the anonymous report and return it only through a channel agreed with the study owner.</div>
+
+    <section class="panel">
+      <div class="meta"><span>Session: <strong id="session-code"></strong></span><span>Started: <strong id="started-at"></strong></span><span>Cases: <strong>3 synthetic</strong></span></div>
+      <label for="role">Which best describes your work?</label>
+      <select id="role"><option value="implementation_consultant">Implementation consultant</option><option value="delivery_lead">Delivery lead</option><option value="other">Other</option></select>
+    </section>
+
+    <section class="grid">
+      <article class="case" data-case="req-defect">
+        <h2>Case 1 · Qualifying US leads</h2>
+        <p>A delivered routing workflow assigns qualifying US leads to an inactive representative.</p>
+        <p class="evidence"><strong>Available evidence:</strong> S1 requires every qualifying lead to be assigned to an active representative. S5 says acceptance-criteria failures are corrected without an additional fee.</p>
+        <label for="choice-req-defect">Your classification</label>
+        <select id="choice-req-defect"><option value="">Choose one</option><option value="defect">Defect</option><option value="included_revision">Included revision</option><option value="scope_change">Scope change</option><option value="ambiguous">Ambiguous</option></select>
+        <label for="confidence-req-defect">Confidence (1–5)</label><select id="confidence-req-defect"><option value="">Choose one</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+        <label><input type="checkbox" id="evidence-req-defect">I could trace the decision to the evidence shown.</label>
+      </article>
+
+      <article class="case" data-case="req-revision">
+        <h2>Case 2 · Dashboard layout</h2>
+        <p>The client asks to move the conversion chart above the pipeline chart.</p>
+        <p class="evidence"><strong>Available evidence:</strong> S2 includes two dashboard revision rounds, with one round still unused.</p>
+        <label for="choice-req-revision">Your classification</label>
+        <select id="choice-req-revision"><option value="">Choose one</option><option value="defect">Defect</option><option value="included_revision">Included revision</option><option value="scope_change">Scope change</option><option value="ambiguous">Ambiguous</option></select>
+        <label for="confidence-req-revision">Confidence (1–5)</label><select id="confidence-req-revision"><option value="">Choose one</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+        <label><input type="checkbox" id="evidence-req-revision">I could trace the decision to the evidence shown.</label>
+      </article>
+
+      <article class="case" data-case="req-addition">
+        <h2>Case 3 · UK and Canada routing</h2>
+        <p>The client asks for UK and Canada routing and suggests dropping unstarted administrator training to stay within budget.</p>
+        <p class="evidence"><strong>Available evidence:</strong> S4 excludes additional countries and requires consultant authorization and client acceptance. S3 records the unstarted training deliverable.</p>
+        <label for="choice-req-addition">Your classification</label>
+        <select id="choice-req-addition"><option value="">Choose one</option><option value="defect">Defect</option><option value="included_revision">Included revision</option><option value="scope_change">Scope change</option><option value="ambiguous">Ambiguous</option></select>
+        <label for="confidence-req-addition">Confidence (1–5)</label><select id="confidence-req-addition"><option value="">Choose one</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+        <label><input type="checkbox" id="evidence-req-addition">I could trace the decision to the evidence shown.</label>
+      </article>
+    </section>
+
+    <section class="panel">
+      <label for="note">One short usability note (no identifying information)</label>
+      <textarea id="note" maxlength="500" placeholder="What was clear, confusing, or missing?"></textarea>
+      <div class="buttons"><button class="primary" id="finish">Finish session</button><button id="reset">Start a fresh session</button><a href="index.html" style="padding:11px 0">Back to demo</a></div>
+      <div id="message" class="evidence" role="status"></div>
+    </section>
+
+    <section id="completed" class="panel hidden"><h2>Anonymous report ready</h2><p>Nothing was uploaded. Copy or download this JSON and return it through the agreed study channel.</p><pre id="result"></pre><div class="buttons"><button class="primary" id="copy">Copy report</button><button id="download">Download report</button></div></section>
+    <footer>FairChange uses synthetic judging fixtures. The repository's maintainer must not describe a session as external validation until a real outside participant has completed it.</footer>
+  </main>
+  <script>
+    const CASES = ['req-defect', 'req-revision', 'req-addition'];
+    const code = () => `session-${crypto.randomUUID().replaceAll('-', '').slice(0, 8)}`;
+    const now = () => new Date().toISOString().replace('.000Z', 'Z');
+    let sessionCode = code();
+    let startedAt = now();
+    const $ = (id) => document.getElementById(id);
+    function renderMeta() { $('session-code').textContent = sessionCode; $('started-at').textContent = startedAt; }
+    function fresh() { sessionCode = code(); startedAt = now(); $('completed').classList.add('hidden'); $('message').textContent = ''; $('note').value = ''; CASES.forEach((id) => { $(`choice-${id}`).value = ''; $(`confidence-${id}`).value = ''; $(`evidence-${id}`).checked = false; }); renderMeta(); }
+    function finish() {
+      const note = $('note').value.trim();
+      if (note.length < 3) { $('message').textContent = 'Add a short usability note before finishing.'; return; }
+      const responses = {};
+      for (const id of CASES) {
+        const choice = $(`choice-${id}`).value; const confidence = Number($(`confidence-${id}`).value);
+        if (!choice || !confidence || !$(`evidence-${id}`).checked) { $('message').textContent = 'Complete every case, confidence rating, and evidence checkbox first.'; return; }
+        responses[id] = { choice, evidence_cited: true, confidence };
+      }
+      const report = { session_code: sessionCode, participant_role: $('role').value, started_at: startedAt, ended_at: now(), case_order: CASES, responses, usability_note: note };
+      $('result').textContent = JSON.stringify(report, null, 2); $('completed').classList.remove('hidden'); $('message').textContent = 'Report created locally. It has not been uploaded.'; $('completed').scrollIntoView({ behavior: 'smooth' });
+    }
+    $('finish').addEventListener('click', finish); $('reset').addEventListener('click', fresh); $('copy').addEventListener('click', async () => { await navigator.clipboard.writeText($('result').textContent); $('message').textContent = 'Report copied to the clipboard.'; }); $('download').addEventListener('click', () => { const blob = new Blob([$('result').textContent + '\n'], { type: 'application/json' }); const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = `${sessionCode}.json`; link.click(); URL.revokeObjectURL(link.href); }); renderMeta();
+  </script>
+</body>
+</html>
