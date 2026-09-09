@@ -16,4 +16,4 @@ The runtime was verified with:
 {"request_id":"req-defect"}
 ```
 
-It returned status code 200 and a structured defect assessment. A public HTTPS endpoint is deliberately not claimed yet because direct AgentCore invocation is IAM-protected; a thin authenticated backend endpoint is the next production integration step.
+It returned status code 200 and a structured defect assessment. The public judging page is available at `https://ai-ops1.github.io/fairchange-agent/`; it presents synthetic fixture results and does not proxy AWS credentials or invoke the protected runtime from the browser. A live public invocation endpoint remains a separate production integration step.

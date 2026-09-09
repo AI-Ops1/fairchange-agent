@@ -28,7 +28,7 @@ The fixture is fictional and contains three cases: a routing defect, an included
 - [Captioned demo video](artifacts/fairchange-demo.mp4) and [video notes](docs/demo-video.md).
 - [Submission copy](docs/submission-copy.md) and [final checklist](docs/submission-checklist.md).
 
-The static public demo page is served from [`docs/index.html`](docs/index.html) when GitHub Pages is enabled for the `main` branch. It presents synthetic judging fixtures; the AgentCore runtime itself remains IAM-authenticated.
+Public demo: [ai-ops1.github.io/fairchange-agent](https://ai-ops1.github.io/fairchange-agent/). It presents synthetic judging fixtures; the AgentCore runtime itself remains IAM-authenticated.
 
 ## Deployment status
 

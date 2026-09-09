@@ -6,6 +6,7 @@
 - [x] Deterministic offline demo and 13 automated tests passing in the source environment
 - [x] Twenty synthetic evaluation cases with balanced labels and label-isolation checks
 - [x] Captioned demo video: [`fairchange-demo.mp4`](../artifacts/fairchange-demo.mp4)
+- [x] Public static demo: `https://ai-ops1.github.io/fairchange-agent/`
 - [x] Judge-facing architecture, demo, evidence, deployment, limitations, and user-session notes
 - [x] Bedrock AgentCore runtime smoke test verified HTTP 200 for `req-defect`
 - [ ] Independent user sessions with external consultants
