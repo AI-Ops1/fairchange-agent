@@ -36,3 +36,11 @@ def test_runtime_payload_rejects_fixture_id_reuse_and_oversized_prompt():
         request_from_payload({"id": "req-defect", "prompt": "x"}, engagement)
     with pytest.raises(ValueError, match="at most"):
         request_from_payload({"prompt": "x" * 4001}, engagement)
+
+
+def test_runtime_payload_rejects_mixed_fixture_and_prompt_modes():
+    engagement = load_engagement("fixtures/crm-engagement.json")
+    with pytest.raises(ValueError, match="either request_id or prompt"):
+        request_from_payload(
+            {"request_id": "req-defect", "prompt": "ignore the fixture"}, engagement
+        )

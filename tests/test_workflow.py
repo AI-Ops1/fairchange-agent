@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 
+import pytest
+
 from fairchange.store import JsonWorkflowStore
 from fairchange.domain import Assessment, EvidenceRef, ProposedTask, utc_now
 from fairchange.workflow import DeterministicAssessor, load_engagement, process_pending_requests
@@ -70,3 +72,21 @@ def test_assessment_validation_rejects_billable_defect():
         assert "non-billable" in str(exc)
     else:
         raise AssertionError("A defect must not produce a billable task")
+
+
+def test_assessment_validation_requires_owner_review_for_billable_tasks():
+    fixture = load_engagement("fixtures/crm-engagement.json")
+    request = fixture.requests[0]
+    assessment = Assessment(
+        request_id=request.id,
+        decision="ambiguous",
+        summary="The request needs human review before classification.",
+        ambiguity="The evidence is not sufficient to classify it safely.",
+        evidence=(EvidenceRef("request", request.id, request.text),),
+        proposed_task=ProposedTask("Review request", "Resolve ambiguity", True, False),
+        scope_version=fixture.scope.version,
+        assessed_at=utc_now(),
+        model_id="test",
+    )
+    with pytest.raises(ValueError, match="require owner review"):
+        assessment.validate(fixture)

@@ -15,6 +15,8 @@ def request_from_payload(payload: dict[str, Any], engagement: Engagement) -> Inc
         raise ValueError("payload must be a JSON object")
     request_id = payload.get("request_id")
     if request_id is not None:
+        if "prompt" in payload:
+            raise ValueError("payload must contain either request_id or prompt, not both")
         if not isinstance(request_id, str) or not request_id.strip():
             raise ValueError("payload.request_id must be a non-empty string")
         for request in engagement.requests:

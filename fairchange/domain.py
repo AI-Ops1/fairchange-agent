@@ -199,6 +199,9 @@ class Assessment:
         if self.decision == "included_revision" and self.proposed_task is not None:
             if self.proposed_task.billable:
                 raise ValueError("Included revisions must be non-billable")
+        if self.proposed_task is not None and self.proposed_task.billable:
+            if not self.proposed_task.requires_owner_review:
+                raise ValueError("Billable tasks must require owner review")
         if self.decision == "scope_change":
             if self.proposed_task is None or not self.proposed_task.requires_owner_review:
                 raise ValueError("Scope changes must create an owner-review task")
