@@ -8,9 +8,8 @@
 - [ ] Final captioned walkthrough video regenerated after the audit and uploaded publicly to YouTube or Vimeo (maximum 5 minutes)
 - [x] Public static demo: `https://ai-ops1.github.io/fairchange-agent/`
 - [x] Judge-facing architecture, demo, evidence, deployment, limitations, and user-session notes
-- [x] Previous Bedrock AgentCore runtime smoke test verified HTTP 200 for `req-defect`
-- [ ] Re-deploy the audited runtime code and re-run fixture plus bounded-prompt smoke checks
-- [x] Production identity provider configured: Amazon Cognito JWT authorizer on AgentCore runtime version 2; unauthenticated 401 and authenticated 200 smoke checks recorded
+- [x] Audited Bedrock AgentCore runtime version 3 deployed; unauthenticated 401, Cognito access-token `req-defect` 200, and bounded-prompt 200 smoke checks recorded
+- [x] Production identity provider configured: Amazon Cognito JWT authorizer preserved on AgentCore runtime version 3
 - [ ] Independent user sessions with external consultants
 - [ ] Live public invocation endpoint; the current runtime requires a Cognito bearer token and is not proxied by the static demo
 - [ ] Final Devpost submission and any track-specific form submission
