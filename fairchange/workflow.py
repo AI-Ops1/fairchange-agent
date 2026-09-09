@@ -128,7 +128,7 @@ class DeterministicAssessor:
                 billable=False,
                 requires_owner_review=False,
             )
-        else:
+        elif request.id == "req-addition":
             decision = "scope_change"
             summary = "UK and Canada routing are excluded regional work and require a governed proposal."
             ambiguity = "The request suggests substituting unstarted training; client acceptance is not yet recorded."
@@ -146,6 +146,8 @@ class DeterministicAssessor:
                 requires_owner_review=True,
                 status="review",
             )
+        else:
+            raise ValueError(f"Unsupported deterministic request: {request.id}")
         assessment = Assessment(
             request_id=request.id,
             decision=decision,
@@ -241,7 +243,10 @@ def _parse_json(raw: str) -> dict[str, Any]:
     start, end = candidate.find("{"), candidate.rfind("}")
     if start < 0 or end < start:
         raise ValueError(f"Model did not return a JSON object: {raw[:400]}")
-    return json.loads(candidate[start : end + 1])
+    payload = json.loads(candidate[start : end + 1])
+    if not isinstance(payload, dict):
+        raise ValueError("Model response must be a JSON object")
+    return payload
 
 
 def _canonical_source_id(source_type: str, source_id: str, engagement: Engagement) -> str:

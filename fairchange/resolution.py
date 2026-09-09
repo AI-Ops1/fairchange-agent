@@ -82,6 +82,8 @@ def build_decision_card(
     training_task = _find_task(engagement, "administrator-training")
     routing_amount = _amount(routing_estimate.hours, routing_estimate.rate_usd_per_hour)
     training_amount = _amount(training_estimate.hours, training_estimate.rate_usd_per_hour)
+    if training_amount > routing_amount:
+        raise ValueError("A substitution credit cannot exceed the proposed work price")
     proposal_id = f"proposal:{engagement.project_id}:{assessment.request_id}:v{proposal_version}"
 
     evidence = list(assessment.evidence)
@@ -194,6 +196,8 @@ def _find_task(engagement: Engagement, work_id: str):
 
 
 def _amount(hours: float, rate: float) -> float:
+    if hours <= 0 or rate < 0:
+        raise ValueError("Approved estimates must have positive hours and a non-negative rate")
     return round(hours * rate, 2)
 
 

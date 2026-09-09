@@ -2,7 +2,7 @@
 
 ```mermaid
 flowchart LR
-    U[Consultant or owner] -->|request_id or prompt| C[AWS-authenticated caller]
+    U[Consultant or owner] -->|request_id or prompt| C[Cognito-authenticated caller]
     C --> R[Amazon Bedrock AgentCore Runtime]
     R --> A[Strands assessment agent]
     A --> T[Read-only retrieval tools]
@@ -20,4 +20,4 @@ The deployed runtime receives JSON and returns a structured assessment. Retrieva
 
 The local workflow persists a cursor, assessments, and internal tasks in replace-based JSON state. The resolution workflow persists the proposal, owner authorization, client acceptance, scope revision, and delivery task as one recoverable state update. The local HMAC client is explicitly a test boundary; production identity should be supplied by the host application's identity provider.
 
-The runtime is IAM-authenticated. A production caller should use a least-privilege role with `bedrock-agentcore:InvokeAgentRuntime` and model permissions only where required. AWS credentials belong on the server side, never in a browser.
+The runtime validates Cognito bearer tokens at the AgentCore boundary. IAM is the AWS deployment and administration path; a server-side administrative caller still needs least-privilege `bedrock-agentcore:InvokeAgentRuntime` access. AWS credentials and bearer tokens belong on the server side, never in a browser.

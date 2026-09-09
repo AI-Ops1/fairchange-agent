@@ -69,7 +69,9 @@ class JsonResolutionSessionStore:
         state = resolution_store.load()
         proposal = state.proposals.get(session.proposal_id)
         if proposal is None:
-            return session
+            raise ContinuationError(
+                f"Proposal is missing for continuation: {session.proposal_id}"
+            )
         self._check_match(
             session,
             proposal["proposal_id"],

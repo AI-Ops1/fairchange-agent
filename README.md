@@ -27,6 +27,7 @@ The fixture is fictional and contains three cases: a routing defect, an included
 - [User-session notes](docs/user-sessions.md) — current evidence and open validation work.
 - [Captioned demo video](artifacts/fairchange-demo.mp4) and [video notes](docs/demo-video.md).
 - [Submission copy](docs/submission-copy.md) and [final checklist](docs/submission-checklist.md).
+- [Audit report](docs/audit-2026-09-09.md) — code, runtime, and submission-gate review.
 
 Public demo: [ai-ops1.github.io/fairchange-agent](https://ai-ops1.github.io/fairchange-agent/). It presents synthetic judging fixtures; the AgentCore runtime is protected by a Cognito JWT authorizer and is not proxied through the browser demo.
 
@@ -86,7 +87,7 @@ aws bedrock-agentcore invoke-agent-runtime response.json `
 Get-Content response.json
 ```
 
-The runtime also accepts a `prompt` payload for exploratory testing, but the fixture `request_id` path is the reproducible judging path.
+The runtime accepts either a known fixture `request_id` or a bounded ephemeral `prompt` payload. Fixture IDs are the reproducible judging path; prompt requests are evaluated against the same synthetic engagement and are never persisted as customer records.
 
 For the production user path, obtain a Cognito access token from the configured user pool and send it as `Authorization: Bearer <token>` to the AgentCore runtime endpoint. The deployed configuration and verification evidence are documented in [authentication](docs/authentication.md).
 

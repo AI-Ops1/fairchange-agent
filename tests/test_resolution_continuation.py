@@ -34,3 +34,17 @@ def test_session_pauses_and_resumes_across_owner_and_client_decisions(tmp_path):
     assert completed.status == "completed"
     assert completed.waiting_for is None
     assert completed.last_event == "client_accepted"
+
+
+def test_session_fails_loudly_when_its_proposal_is_missing(tmp_path):
+    resolution_store = JsonResolutionStore(tmp_path / "resolution.json")
+    session_store = JsonResolutionSessionStore(tmp_path / "session.json")
+    card = _card()
+    session_store.start(card)
+
+    try:
+        session_store.resume(resolution_store)
+    except ValueError as exc:
+        assert "Proposal is missing" in str(exc)
+    else:
+        raise AssertionError("A missing proposal must not leave a continuation silently paused")

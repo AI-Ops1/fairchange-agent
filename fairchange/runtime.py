@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import asyncio
 import os
+from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
@@ -39,7 +40,14 @@ def create_app():
     @app.entrypoint
     async def invoke(payload: dict[str, Any]) -> dict[str, Any]:
         request = request_from_payload(payload, engagement)
-        assessment = await asyncio.to_thread(assessor.assess, request, engagement)
+        assessment_engagement = engagement
+        if not any(item.id == request.id for item in engagement.requests):
+            assessment_engagement = replace(
+                engagement, requests=(*engagement.requests, request)
+            )
+        assessment = await asyncio.to_thread(
+            assessor.assess, request, assessment_engagement
+        )
         return {"request_id": request.id, "assessment": assessment_payload(assessment)}
 
     return app

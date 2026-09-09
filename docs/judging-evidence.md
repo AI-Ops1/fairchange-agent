@@ -9,7 +9,8 @@
 | Restart safety | `fairchange/store.py`, `scripts/run_demo.py` | Re-running the same state processes zero events |
 | Exact human authorization | `fairchange/resolution_store.py`, `tests/test_resolution_store.py` | Version and content-hash mismatches are rejected |
 | Client acceptance | `fairchange/test_client.py`, `tests/test_test_client.py` | Owner and client roles are distinct in the test boundary |
-| Agent runtime | `main.py`, `fairchange/runtime.py` | AgentCore runtime verified in `eu-north-1` with HTTP 200 |
-| Safety disclosure | `README.md`, `docs/architecture.md` | Synthetic data and test-only authentication are explicit |
+| Agent runtime | `main.py`, `fairchange/runtime.py` | Previous AgentCore version was verified in `eu-north-1` with HTTP 200; audited runtime redeployment is tracked in the final checklist |
+| Production identity boundary | `docs/authentication.md`, `docs/deployment.md` | Cognito JWT authorizer is configured on AgentCore version 2; unauthenticated requests return 401 and authenticated fixture invocation returns 200 |
+| Safety disclosure | `README.md`, `docs/architecture.md`, `docs/limitations.md` | Synthetic data, bounded prompt handling, and test-only local HMAC approval tokens are explicit |
 
-The project has 13 passing automated tests. Independent consultant sessions and production identity-provider integration remain open limitations and are not represented as completed evidence.
+The automated suite covers workflow, runtime payload validation, evidence policy, continuation, and approval boundaries. Independent consultant sessions remain open and are not represented as completed evidence. The static page is a public fixture demo, not an unauthenticated production endpoint.

@@ -153,8 +153,24 @@ class Assessment:
     model_id: str
 
     def validate(self, engagement: Engagement) -> None:
+        valid_decisions = {"defect", "included_revision", "scope_change", "ambiguous"}
+        if not isinstance(self.decision, str) or self.decision not in valid_decisions:
+            raise ValueError(f"Assessment {self.request_id} has invalid decision: {self.decision}")
+        request_ids = {item.id for item in engagement.requests}
+        if not isinstance(self.request_id, str) or self.request_id not in request_ids:
+            raise ValueError(f"Assessment {self.request_id} does not match an engagement request")
+        if not isinstance(self.summary, str) or not self.summary.strip():
+            raise ValueError(f"Assessment {self.request_id} has no summary")
         if not self.evidence:
             raise ValueError(f"Assessment {self.request_id} has no evidence references")
+        if any(
+            not isinstance(item.source_id, str)
+            or not item.source_id.strip()
+            or not isinstance(item.excerpt, str)
+            or not item.excerpt.strip()
+            for item in self.evidence
+        ):
+            raise ValueError(f"Assessment {self.request_id} contains incomplete evidence")
         valid_keys = engagement.evidence_keys()
         invalid = [item.key() for item in self.evidence if item.key() not in valid_keys]
         if invalid:
@@ -164,6 +180,25 @@ class Assessment:
                 f"Assessment {self.request_id} uses scope version {self.scope_version}; "
                 f"current version is {engagement.scope.version}"
             )
+        if self.proposed_task is not None:
+            task = self.proposed_task
+            if (
+                not isinstance(task.title, str)
+                or not task.title.strip()
+                or not isinstance(task.reason, str)
+                or not task.reason.strip()
+            ):
+                raise ValueError(f"Assessment {self.request_id} has an incomplete proposed task")
+            if not isinstance(task.billable, bool) or not isinstance(task.requires_owner_review, bool):
+                raise ValueError(f"Assessment {self.request_id} has invalid task policy flags")
+            if not isinstance(task.status, str) or task.status not in {"open", "review", "done"}:
+                raise ValueError(f"Assessment {self.request_id} has invalid task status: {task.status}")
+        if self.decision == "defect" and self.proposed_task is not None:
+            if self.proposed_task.billable:
+                raise ValueError("Defect tasks must be non-billable")
+        if self.decision == "included_revision" and self.proposed_task is not None:
+            if self.proposed_task.billable:
+                raise ValueError("Included revisions must be non-billable")
         if self.decision == "scope_change":
             if self.proposed_task is None or not self.proposed_task.requires_owner_review:
                 raise ValueError("Scope changes must create an owner-review task")

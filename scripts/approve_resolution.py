@@ -26,6 +26,12 @@ def main() -> int:
     parser.add_argument("--owner-id", default="owner-demo")
     parser.add_argument("--client-id", default="client-demo")
     parser.add_argument(
+        "--phase",
+        choices=("owner", "client", "all"),
+        default="all",
+        help="Run only the owner gate, only the client gate, or both (default).",
+    )
+    parser.add_argument(
         "--test-secret",
         default=os.getenv("FAIRCHANGE_TEST_SECRET", "local-demo-secret"),
         help="Local test-only signing secret; use FAIRCHANGE_TEST_SECRET outside the demo.",
@@ -43,22 +49,28 @@ def main() -> int:
 
     state = store.load()
     existing = state.proposals.get(card.proposal_id)
-    if existing and existing.get("owner_status") == "authorized":
-        authorized = decision_card_from_dict(existing)
-    else:
-        authorized = client.authorize(
-            card.proposal_id, owner_token, card.proposal_version, card.content_hash
+    authorized = decision_card_from_dict(existing) if existing else None
+    if args.phase in ("owner", "all"):
+        if authorized is None or authorized.owner_status != "authorized":
+            authorized = client.authorize(
+                card.proposal_id, owner_token, card.proposal_version, card.content_hash
+            )
+        print(f"OWNER_AUTHORIZED: {authorized.owner_id}")
+    elif authorized is None or authorized.owner_status != "authorized":
+        raise SystemExit("OWNER_AUTHORIZATION_REQUIRED: run with --phase owner first")
+
+    if args.phase in ("client", "all"):
+        record = client.accept(
+            authorized.proposal_id,
+            client_token,
+            authorized.proposal_version,
+            authorized.content_hash,
         )
-    record = client.accept(
-        authorized.proposal_id,
-        client_token,
-        authorized.proposal_version,
-        authorized.content_hash,
-    )
-    print(f"OWNER_AUTHORIZED: {authorized.owner_id}")
-    print(f"CLIENT_ACCEPTED: {record.client_id}")
-    print(f"SCOPE_CHANGE: {record.change_id}; version={record.accepted_scope_version}")
-    print(f"DELIVERY_TASK: {record.delivery_task_id}; status=ready")
+        print(f"CLIENT_ACCEPTED: {record.client_id}")
+        print(f"SCOPE_CHANGE: {record.change_id}; version={record.accepted_scope_version}")
+        print(f"DELIVERY_TASK: {record.delivery_task_id}; status=ready")
+    else:
+        print("WAITING_FOR_CLIENT: owner gate is complete; no client acceptance recorded")
     print(f"STATE_FILE: {args.store}")
     print("TEST_ONLY_AUTH: local HMAC tokens; replace with the deployed identity provider.")
     return 0
