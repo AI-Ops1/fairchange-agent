@@ -1,0 +1,26 @@
+{
+  "description": "Synthetic evaluation cases for FairChange. Labels are evaluation-only and must be removed before sending the request text to an agent.",
+  "version": 1,
+  "cases": [
+    {"id":"eval-01","category":"defect","expected_decision":"defect","request":"The delivered US routing sends qualifying leads to an inactive representative. Please correct the routing."},
+    {"id":"eval-02","category":"defect","expected_decision":"defect","request":"The agreed inbound workflow rejects valid US leads after delivery. Please fix the acceptance failure."},
+    {"id":"eval-03","category":"defect","expected_decision":"defect","request":"The dashboard export crashes on the agreed input format. Restore the promised behavior."},
+    {"id":"eval-04","category":"defect","expected_decision":"defect","request":"The delivered lead assignment violates the signed active-representative criterion."},
+    {"id":"eval-05","category":"defect","expected_decision":"defect","request":"A completed workflow fails the acceptance test for the original US scope."},
+    {"id":"eval-06","category":"included_revision","expected_decision":"included_revision","request":"Use the remaining dashboard revision to move the conversion chart above the pipeline chart."},
+    {"id":"eval-07","category":"included_revision","expected_decision":"included_revision","request":"Please reorder the two existing sales dashboard charts in the unused revision round."},
+    {"id":"eval-08","category":"included_revision","expected_decision":"included_revision","request":"Adjust the layout of the delivered dashboard using the final included revision."},
+    {"id":"eval-09","category":"included_revision","expected_decision":"included_revision","request":"The client wants the existing dashboard charts rearranged within the remaining revision entitlement."},
+    {"id":"eval-10","category":"included_revision","expected_decision":"included_revision","request":"Apply the last contracted dashboard layout change; no new chart is requested."},
+    {"id":"eval-11","category":"scope_change","expected_decision":"scope_change","request":"Add UK lead routing to the delivered US workflow."},
+    {"id":"eval-12","category":"scope_change","expected_decision":"scope_change","request":"Please add routing for Canada and skip the unstarted administrator training."},
+    {"id":"eval-13","category":"scope_change","expected_decision":"scope_change","request":"Replace the four-hour training deliverable with regional routing for two countries."},
+    {"id":"eval-14","category":"scope_change","expected_decision":"scope_change","request":"Add regional routing rules beyond the one-country inbound workflow."},
+    {"id":"eval-15","category":"scope_change","expected_decision":"scope_change","request":"Could you deliver UK and Canada routing as a budget-neutral substitution?"},
+    {"id":"eval-16","category":"ambiguous","expected_decision":"ambiguous","request":"The client says the routing should work everywhere; no countries or acceptance criteria are specified."},
+    {"id":"eval-17","category":"ambiguous","expected_decision":"ambiguous","request":"Please make the dashboard better and handle any related reporting changes."},
+    {"id":"eval-18","category":"ambiguous","expected_decision":"ambiguous","request":"The client references an earlier promise but does not identify the promise or deliverable."},
+    {"id":"eval-19","category":"ambiguous","expected_decision":"ambiguous","request":"Can you include the extra work if it is already covered? The scope reference is missing."},
+    {"id":"eval-20","category":"ambiguous","expected_decision":"ambiguous","request":"The requested change conflicts with the task record, but the client has not clarified which version is current."}
+  ]
+}

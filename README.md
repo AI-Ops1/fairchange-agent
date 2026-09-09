@@ -17,6 +17,19 @@ The workflow keeps commercial judgment behind a human gate: owners review propos
 
 The fixture is fictional and contains three cases: a routing defect, an included dashboard revision, and an out-of-scope regional-routing request. Names, correspondence, amounts, and tasks are synthetic; the illustrative hours are human-authored fixture values.
 
+## Judge assets
+
+- [Architecture](docs/architecture.md) — evidence flow, state boundaries, and human gate.
+- [Demo script](docs/demo-script.md) — reproducible three-case walkthrough.
+- [Judging evidence](docs/judging-evidence.md) — capability-to-file and verification map.
+- [Evaluation cases](evaluation/README.md) — 20 balanced synthetic cases with isolated labels.
+- [Deployment notes](docs/deployment.md) and [limitations](docs/limitations.md).
+- [User-session notes](docs/user-sessions.md) — current evidence and open validation work.
+- [Captioned demo video](artifacts/fairchange-demo.mp4) and [video notes](docs/demo-video.md).
+- [Submission copy](docs/submission-copy.md) and [final checklist](docs/submission-checklist.md).
+
+The static public demo page is served from [`docs/index.html`](docs/index.html) when GitHub Pages is enabled for the `main` branch. It presents synthetic judging fixtures; the AgentCore runtime itself remains IAM-authenticated.
+
 ## Deployment status
 
 The AgentCore runtime is deployed in `eu-north-1` and has been verified with the `req-defect` fixture. The invocation returned HTTP 200 and produced an evidence-backed defect assessment citing scope clauses S1 and S5 with a non-billable corrective task.
@@ -38,6 +51,7 @@ Run the deterministic workflow and its tests:
 ```powershell
 python scripts/run_demo.py --offline
 python -m pytest -q
+python scripts/run_evaluation.py
 ```
 
 The workflow writes demo state under `artifacts/`. A second run should process zero new events because the cursor is persisted.

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FairChange — evidence-backed change resolution</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1220; --panel:#121d2f; --line:#263754; --text:#edf4ff; --muted:#a9b8cf; --accent:#58c4ff; --good:#7ee2ad; --warn:#ffd27a; }
+    * { box-sizing: border-box; } body { margin:0; background:radial-gradient(circle at 80% 0%, #17365a, var(--bg) 48%); color:var(--text); font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif; }
+    main { max-width: 980px; margin: 0 auto; padding: 64px 24px 80px; } .eyebrow { color:var(--accent); font-weight:700; letter-spacing:.12em; text-transform:uppercase; font-size:12px; }
+    h1 { font-size: clamp(36px, 7vw, 72px); line-height:1.02; max-width:760px; margin:16px 0; } h2 { margin-top:0; } p { color:var(--muted); max-width:760px; }
+    .buttons { display:flex; flex-wrap:wrap; gap:12px; margin:28px 0 42px; } a.button { border:1px solid var(--accent); border-radius:8px; color:var(--text); padding:11px 16px; text-decoration:none; } a.primary { background:var(--accent); color:#06101d; font-weight:700; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; } .card { background:rgba(18,29,47,.86); border:1px solid var(--line); border-radius:12px; padding:20px; } .card strong { display:block; margin-bottom:6px; } .good { color:var(--good); } .warn { color:var(--warn); }
+    footer { color:var(--muted); margin-top:46px; font-size:13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">Professional Agents · FairChange</div>
+    <h1>Change requests become evidence-backed decisions.</h1>
+    <p>FairChange checks a client request against signed scope, correspondence, and delivery tasks. It classifies the request as a defect, included revision, or scope change, then keeps commercial changes behind a human approval gate.</p>
+    <div class="buttons">
+      <a class="button primary" href="https://github.com/AI-Ops1/fairchange-agent">View the repository</a>
+      <a class="button" href="https://raw.githubusercontent.com/AI-Ops1/fairchange-agent/main/artifacts/fairchange-demo.mp4">Watch the demo video</a>
+    </div>
+    <section class="grid">
+      <div class="card"><strong class="good">Defect</strong><span>Evidence shows the delivered routing violates S1. The proposed fix is non-billable.</span></div>
+      <div class="card"><strong class="good">Included revision</strong><span>The remaining dashboard revision is covered by S2 and updates the existing task.</span></div>
+      <div class="card"><strong class="warn">Scope change</strong><span>UK and Canada routing is excluded by S4 and requires owner and client approval.</span></div>
+    </section>
+    <p style="margin-top:30px"><strong>Trust boundary:</strong> this public page presents synthetic judging fixtures and verified behavior. The deployed AgentCore runtime is IAM-authenticated; no AWS credentials are exposed here.</p>
+    <footer>FairChange · MIT licensed · Built for the hackathon judging path</footer>
+  </main>
+</body>
+</html>
