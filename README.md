@@ -10,6 +10,12 @@ The [public FairChange workspace](https://ai-ops1.github.io/fairchange-agent/) i
 
 The [independent session kit](https://ai-ops1.github.io/fairchange-agent/external-session.html) is a separate, no-login usability walkthrough. It creates a local anonymous report and never calls the protected runtime. FairChange is standalone for this hackathon; the evidence-backed flow is designed as a future ScopeLedger capability for surfacing scope risk and preparing governed proposals, not as a current ScopeLedger integration.
 
+### The FairChange mark
+
+![FairChange mark](docs/assets/fairchange-mark.svg)
+
+The logo is a stylized **F** built as a routed decision path. Its three nodes represent the product's core movement: retrieve the evidence, classify what changed, and govern the next action. The mint-to-lavender-to-coral gradient moves from a safe, evidence-backed starting point through analysis to a human-controlled commercial decision. The rounded dark tile gives the mark a calm, dependable workspace feel; it is intentionally softer than a warning or billing icon because FairChange helps teams explain change before anyone commits to it.
+
 ## What is implemented
 
 - Typed requests, scope clauses, evidence references, decisions, and tasks.
