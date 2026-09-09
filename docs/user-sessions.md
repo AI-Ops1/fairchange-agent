@@ -12,6 +12,10 @@
 
 No outreach was sent without a recipient and channel explicitly approved by the founder. The kit is available at [`docs/external-session.html`](external-session.html), with the protocol in [`docs/external-session-guide.md`](external-session-guide.md).
 
+## Internal pilot feedback
+
+One founder/operator pilot completed the kit on 2026-09-09 in 9 minutes 56 seconds. The participant cited evidence for all three cases and chose `defect`, `ambiguous`, and `scope_change`; the usability note said the S1–S5 clause labels were confusing. The public kit now includes a plain-language clause glossary. This pilot remains internal and does not close the independent-validation gate.
+
 ## Ready-to-run session kit
 
 Each external session uses a fresh anonymous session code and the same three synthetic cases (`req-defect`, `req-revision`, `req-addition`). The kit records only start/end timestamps, case order, role category, confidence, whether the participant could trace the evidence, and one short usability note. It performs no network upload. Do not collect customer data, credentials, or identifying information. The repository's evaluation cases remain offline evidence; they are not substitutes for independent human sessions.
