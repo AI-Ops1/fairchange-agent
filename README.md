@@ -27,6 +27,7 @@ The fixture is fictional and contains three cases: a routing defect, an included
 
 - [Architecture](docs/architecture.md) — evidence flow, state boundaries, and human gate.
 - [Demo script](docs/demo-script.md) — reproducible three-case walkthrough.
+- [Judge walkthrough](docs/judge-walkthrough.md) — a two-minute product tour and evaluation prompts.
 - [Judging evidence](docs/judging-evidence.md) — capability-to-file and verification map.
 - [Evaluation cases](evaluation/README.md) — 20 balanced synthetic cases with isolated labels.
 - [Deployment notes](docs/deployment.md) and [limitations](docs/limitations.md).
