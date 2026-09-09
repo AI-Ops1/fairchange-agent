@@ -1,0 +1,13 @@
+[
+  {"text":"A client asks for one more change. What happens next?","startMs":0,"endMs":12000,"timestampMs":null,"confidence":null},
+  {"text":"Find the receipts before making a promise.","startMs":12000,"endMs":28000,"timestampMs":null,"confidence":null},
+  {"text":"Automation handles the search. People own the commitment.","startMs":28000,"endMs":45000,"timestampMs":null,"confidence":null},
+  {"text":"Intake. Evidence. Decision. Human gate.","startMs":45000,"endMs":65000,"timestampMs":null,"confidence":null},
+  {"text":"An acceptance-criteria failure is a defect and a no-fee correction.","startMs":65000,"endMs":84000,"timestampMs":null,"confidence":null},
+  {"text":"A request inside the remaining revision allowance is included work.","startMs":84000,"endMs":103000,"timestampMs":null,"confidence":null},
+  {"text":"Regional routing changes the commercial agreement: scope change.","startMs":103000,"endMs":128000,"timestampMs":null,"confidence":null},
+  {"text":"The agent drafts. The owner reviews. The client accepts.","startMs":128000,"endMs":150000,"timestampMs":null,"confidence":null},
+  {"text":"See the evidence before the answer.","startMs":150000,"endMs":170000,"timestampMs":null,"confidence":null},
+  {"text":"Independent participants can try fictional cases without login or upload.","startMs":170000,"endMs":185000,"timestampMs":null,"confidence":null},
+  {"text":"FairChange makes scope decisions explainable before they become commercial surprises.","startMs":185000,"endMs":195000,"timestampMs":null,"confidence":null}
+]

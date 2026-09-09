@@ -1,0 +1,7 @@
+[
+  {"text":"Every implementation team gets change requests. The hard part is knowing what the signed scope already covers.","startMs":0,"endMs":8000,"timestampMs":null,"confidence":null},
+  {"text":"FairChange retrieves the evidence, classifies the request, and explains the next safe action.","startMs":8000,"endMs":17000,"timestampMs":null,"confidence":null},
+  {"text":"Defect. Included work. Scope change.","startMs":17000,"endMs":27000,"timestampMs":null,"confidence":null},
+  {"text":"When money or scope is involved, the agent stops at a human gate.","startMs":27000,"endMs":37000,"timestampMs":null,"confidence":null},
+  {"text":"FairChange automates the search. People own the commitment.","startMs":37000,"endMs":45000,"timestampMs":null,"confidence":null}
+]
