@@ -1,8 +1,14 @@
 # FairChange
 
-FairChange is an evidence-backed change-resolution agent for GTM implementation consultants. It checks a client request against signed scope, correspondence, and delivery tasks, then classifies the request as a defect, included revision, or scope change and prepares the next safe action.
+FairChange is an evidence-backed change-resolution agent for implementation teams. It automates the repetitive work of finding the relevant scope clause, correspondence, and delivery task, then explains whether a client request is a defect, included revision, or scope change. The final commercial decision stays with accountable humans.
 
 The workflow keeps commercial judgment behind a human gate: owners review proposed commercial changes and clients accept the exact proposal before a scope revision is persisted. Routine internal work can proceed under a standing policy.
+
+## Product experience
+
+The [public FairChange workspace](https://ai-ops1.github.io/fairchange-agent/) is the fastest way to understand the product. It uses three synthetic cases to show the complete path: retrieve evidence, classify the request, explain the decision, and place commercial work behind an owner-review and client-acceptance gate. Each case has a plain-language next action so a judge or first-time user can understand the system without knowing the internal S1–S5 labels first.
+
+The [independent session kit](https://ai-ops1.github.io/fairchange-agent/external-session.html) is a separate, no-login usability walkthrough. It creates a local anonymous report and never calls the protected runtime. FairChange is standalone for this hackathon; the evidence-backed flow is designed as a future ScopeLedger capability for surfacing scope risk and preparing governed proposals, not as a current ScopeLedger integration.
 
 ## What is implemented
 

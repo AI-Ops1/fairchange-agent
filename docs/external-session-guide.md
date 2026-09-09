@@ -1,6 +1,6 @@
 # Independent session guide
 
-The public [external session kit](external-session.html) is a privacy-safe, no-login walkthrough for implementation consultants and delivery leads. It uses only the three fictional fixture cases and performs no network upload. A participant receives a fresh anonymous session code, makes an independent classification for each case, records confidence and whether the evidence trail was traceable, then returns the generated JSON through a channel agreed with the study owner.
+The public [external session kit](external-session.html) is a privacy-safe, no-login walkthrough for implementation consultants and delivery leads. It carries the same FairChange mark and plain-language case framing as the [product demo](index.html), but keeps the participant task separate from the demo's fixture walkthrough. It uses only the three fictional fixture cases and performs no network upload. A participant receives a fresh anonymous session code, makes an independent classification for each case, records confidence and whether the evidence trail was traceable, then returns the generated JSON through a channel agreed with the study owner.
 
 ## Protocol
 
