@@ -1,0 +1,12 @@
+{
+  "completed_at": "2026-09-09T11:57:35Z",
+  "content_hash": "sha256:b20f5b749c638669458a81ec9fd15e27e188a630323d232f27409e6a8e3a0fa8",
+  "continuation_id": "continuation:proposal:demo-crm-001:req-addition:v1",
+  "last_event": "client_accepted",
+  "paused_at": "2026-09-09T11:57:34Z",
+  "proposal_id": "proposal:demo-crm-001:req-addition:v1",
+  "proposal_version": 1,
+  "resumed_at": "2026-09-09T11:57:34Z",
+  "status": "completed",
+  "waiting_for": null
+}

@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.pytest-tmp*/
+*.pyc
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite*
+node_modules/
+dist/
+.aws/
+artifacts/private/
+.agentcore-cli/

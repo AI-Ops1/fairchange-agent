@@ -1,0 +1,242 @@
+{
+  "assessments": {
+    "req-addition": {
+      "ambiguity": null,
+      "assessed_at": "2026-09-09T11:32:30Z",
+      "decision": "scope_change",
+      "evidence": [
+        {
+          "excerpt": "Could you add routing for our UK and Canada teams? We can skip the administrator training if that lets us stay within the budget.",
+          "source_id": "req-addition",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Configure one US inbound lead routing workflow. Every qualifying lead must be assigned to an active representative.",
+          "source_id": "S1",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Additional countries and regional routing rules are excluded. Any paid addition or deliverable substitution requires consultant authorization and client acceptance.",
+          "source_id": "S4",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Provide a four-hour administrator training session. This deliverable has not started and has no downstream dependencies.",
+          "source_id": "S3",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "work_id: administrator-training, status: not_started, scope_clause: S3",
+          "source_id": "task-training",
+          "source_type": "task"
+        },
+        {
+          "excerpt": "work_id: us-routing, status: delivered, scope_clause: S1",
+          "source_id": "task-routing",
+          "source_type": "task"
+        }
+      ],
+      "model_id": "eu.anthropic.claude-sonnet-4-6",
+      "proposed_task": {
+        "billable": true,
+        "reason": "Client requests new routing workflows for UK and Canada regions and proposes substituting the in-scope administrator training (S3) to offset cost. Both the regional routing addition and the deliverable substitution are explicitly excluded under S4 and require consultant authorization and client acceptance before any work begins. A change order must be drafted, reviewed by the engagement owner, and accepted by the client.",
+        "requires_owner_review": true,
+        "status": "review",
+        "title": "UK and Canada Regional Routing \u2014 Scope Change Evaluation"
+      },
+      "request_id": "req-addition",
+      "scope_version": 1,
+      "summary": "The request asks for two distinct changes: (1) adding UK and Canada routing, which is explicitly excluded by S4 as additional regional routing rules requiring consultant authorization and client acceptance; and (2) substituting the administrator training (S3, not yet started) for that routing work, which S4 also classifies as a paid deliverable substitution requiring the same approvals. No correspondence supports any prior agreement to include these regions or to trade training for routing. Both elements constitute out-of-scope additions that are billable and require owner review and client acceptance before proceeding."
+    },
+    "req-defect": {
+      "ambiguity": null,
+      "assessed_at": "2026-09-09T11:28:44Z",
+      "decision": "defect",
+      "evidence": [
+        {
+          "excerpt": "Qualifying US leads are being assigned to an inactive rep. Please fix the routing.",
+          "source_id": "req-defect",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Configure one US inbound lead routing workflow. Every qualifying lead must be assigned to an active representative.",
+          "source_id": "S1",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Correct failures against agreed acceptance criteria without an additional fee.",
+          "source_id": "S5",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "work_id: us-routing, status: delivered, scope_clause: S1",
+          "source_id": "task-routing",
+          "source_type": "task"
+        }
+      ],
+      "model_id": "eu.anthropic.claude-sonnet-4-6",
+      "proposed_task": {
+        "billable": false,
+        "reason": "The delivered routing workflow violates the S1 acceptance criterion that every qualifying lead must be assigned to an active representative. This is a defect correction required under S5 at no additional charge.",
+        "requires_owner_review": false,
+        "status": "open",
+        "title": "Fix US lead routing: exclude inactive representatives from assignment"
+      },
+      "request_id": "req-defect",
+      "scope_version": 1,
+      "summary": "Clause S1 explicitly requires that every qualifying US lead be assigned to an active representative. The delivered routing workflow (task-routing) is assigning qualifying US leads to an inactive rep, which is a direct failure against the agreed acceptance criterion. Under clause S5, failures against acceptance criteria must be corrected without an additional fee. This is a non-billable internal fix."
+    },
+    "req-revision": {
+      "ambiguity": null,
+      "assessed_at": "2026-09-09T11:28:55Z",
+      "decision": "included_revision",
+      "evidence": [
+        {
+          "excerpt": "For our remaining dashboard revision, please move the conversion chart above the pipeline chart.",
+          "source_id": "req-revision",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Deliver one sales dashboard with two revision rounds. One round remains unused.",
+          "source_id": "S2",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Any paid addition or deliverable substitution requires consultant authorization and client acceptance.",
+          "source_id": "S4",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "work_id: sales-dashboard, status: review, scope_clause: S2",
+          "source_id": "task-dashboard",
+          "source_type": "task"
+        }
+      ],
+      "model_id": "eu.anthropic.claude-sonnet-4-6",
+      "proposed_task": {
+        "billable": false,
+        "reason": "Client is invoking the one unused revision round granted by S2. Reordering two existing charts is a layout change within scope. This consumes the final revision entitlement; no further revision rounds will remain after completion.",
+        "requires_owner_review": false,
+        "status": "open",
+        "title": "Apply remaining dashboard revision: move conversion chart above pipeline chart"
+      },
+      "request_id": "req-revision",
+      "scope_version": 1,
+      "summary": "The client is exercising their one remaining contracted dashboard revision round (S2) to reorder two existing charts. This is a layout change within the already-delivered dashboard, covered by the signed scope, and does not constitute new work or a defect."
+    }
+  },
+  "cursor": "request:req-addition",
+  "internal_tasks": {
+    "task:fairchange:req-addition": {
+      "billable": true,
+      "created_at": "2026-09-09T11:32:30Z",
+      "evidence": [
+        {
+          "excerpt": "Could you add routing for our UK and Canada teams? We can skip the administrator training if that lets us stay within the budget.",
+          "source_id": "req-addition",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Configure one US inbound lead routing workflow. Every qualifying lead must be assigned to an active representative.",
+          "source_id": "S1",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Additional countries and regional routing rules are excluded. Any paid addition or deliverable substitution requires consultant authorization and client acceptance.",
+          "source_id": "S4",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Provide a four-hour administrator training session. This deliverable has not started and has no downstream dependencies.",
+          "source_id": "S3",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "work_id: administrator-training, status: not_started, scope_clause: S3",
+          "source_id": "task-training",
+          "source_type": "task"
+        },
+        {
+          "excerpt": "work_id: us-routing, status: delivered, scope_clause: S1",
+          "source_id": "task-routing",
+          "source_type": "task"
+        }
+      ],
+      "id": "task:fairchange:req-addition",
+      "reason": "Client requests new routing workflows for UK and Canada regions and proposes substituting the in-scope administrator training (S3) to offset cost. Both the regional routing addition and the deliverable substitution are explicitly excluded under S4 and require consultant authorization and client acceptance before any work begins. A change order must be drafted, reviewed by the engagement owner, and accepted by the client.",
+      "request_id": "req-addition",
+      "requires_owner_review": true,
+      "status": "review",
+      "title": "UK and Canada Regional Routing \u2014 Scope Change Evaluation"
+    },
+    "task:fairchange:req-defect": {
+      "billable": false,
+      "created_at": "2026-09-09T11:28:44Z",
+      "evidence": [
+        {
+          "excerpt": "Qualifying US leads are being assigned to an inactive rep. Please fix the routing.",
+          "source_id": "req-defect",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Configure one US inbound lead routing workflow. Every qualifying lead must be assigned to an active representative.",
+          "source_id": "S1",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Correct failures against agreed acceptance criteria without an additional fee.",
+          "source_id": "S5",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "work_id: us-routing, status: delivered, scope_clause: S1",
+          "source_id": "task-routing",
+          "source_type": "task"
+        }
+      ],
+      "id": "task:fairchange:req-defect",
+      "reason": "The delivered routing workflow violates the S1 acceptance criterion that every qualifying lead must be assigned to an active representative. This is a defect correction required under S5 at no additional charge.",
+      "request_id": "req-defect",
+      "requires_owner_review": false,
+      "status": "open",
+      "title": "Fix US lead routing: exclude inactive representatives from assignment"
+    },
+    "task:fairchange:req-revision": {
+      "billable": false,
+      "created_at": "2026-09-09T11:28:55Z",
+      "evidence": [
+        {
+          "excerpt": "For our remaining dashboard revision, please move the conversion chart above the pipeline chart.",
+          "source_id": "req-revision",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Deliver one sales dashboard with two revision rounds. One round remains unused.",
+          "source_id": "S2",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Any paid addition or deliverable substitution requires consultant authorization and client acceptance.",
+          "source_id": "S4",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "work_id: sales-dashboard, status: review, scope_clause: S2",
+          "source_id": "task-dashboard",
+          "source_type": "task"
+        }
+      ],
+      "id": "task:fairchange:req-revision",
+      "reason": "Client is invoking the one unused revision round granted by S2. Reordering two existing charts is a layout change within scope. This consumes the final revision entitlement; no further revision rounds will remain after completion.",
+      "request_id": "req-revision",
+      "requires_owner_review": false,
+      "status": "open",
+      "title": "Apply remaining dashboard revision: move conversion chart above pipeline chart"
+    }
+  },
+  "processed_event_ids": [
+    "request:req-defect",
+    "request:req-revision",
+    "request:req-addition"
+  ]
+}

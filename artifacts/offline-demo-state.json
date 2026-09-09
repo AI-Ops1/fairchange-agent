@@ -1,0 +1,212 @@
+{
+  "assessments": {
+    "req-addition": {
+      "ambiguity": "The request suggests substituting unstarted training; client acceptance is not yet recorded.",
+      "assessed_at": "2026-09-09T10:49:07Z",
+      "decision": "scope_change",
+      "evidence": [
+        {
+          "excerpt": "Could you add routing for our UK and Canada teams? We can skip the administrator training if that lets us stay within the budget.",
+          "source_id": "req-addition",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Additional countries and regional routing rules are excluded. Any paid addition or deliverable substitution requires consultant authorization and client acceptance.",
+          "source_id": "S4",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Provide a four-hour administrator training session. This deliverable has not started and has no downstream dependencies.",
+          "source_id": "S3",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Approved four-hour estimate.",
+          "source_id": "regional-routing-extension",
+          "source_type": "estimate"
+        },
+        {
+          "excerpt": "The current project covers the US workflow. We can discuss other regions separately once you know the requirements.",
+          "source_id": "email-001",
+          "source_type": "correspondence"
+        }
+      ],
+      "model_id": "deterministic-test-assessor",
+      "proposed_task": {
+        "billable": true,
+        "reason": "Assess excluded regional work and possible training substitution.",
+        "requires_owner_review": true,
+        "status": "review",
+        "title": "Prepare owner-review proposal for UK and Canada routing"
+      },
+      "request_id": "req-addition",
+      "scope_version": 1,
+      "summary": "UK and Canada routing are excluded regional work and require a governed proposal."
+    },
+    "req-defect": {
+      "ambiguity": null,
+      "assessed_at": "2026-09-09T10:49:07Z",
+      "decision": "defect",
+      "evidence": [
+        {
+          "excerpt": "Qualifying US leads are being assigned to an inactive rep. Please fix the routing.",
+          "source_id": "req-defect",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Configure one US inbound lead routing workflow. Every qualifying lead must be assigned to an active representative.",
+          "source_id": "S1",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Correct failures against agreed acceptance criteria without an additional fee.",
+          "source_id": "S5",
+          "source_type": "scope"
+        }
+      ],
+      "model_id": "deterministic-test-assessor",
+      "proposed_task": {
+        "billable": false,
+        "reason": "Restore the agreed US lead-routing behavior.",
+        "requires_owner_review": false,
+        "status": "open",
+        "title": "Fix inactive-representative routing defect"
+      },
+      "request_id": "req-defect",
+      "scope_version": 1,
+      "summary": "The request describes a failure against the agreed US routing behavior."
+    },
+    "req-revision": {
+      "ambiguity": null,
+      "assessed_at": "2026-09-09T10:49:07Z",
+      "decision": "included_revision",
+      "evidence": [
+        {
+          "excerpt": "For our remaining dashboard revision, please move the conversion chart above the pipeline chart.",
+          "source_id": "req-revision",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Deliver one sales dashboard with two revision rounds. One round remains unused.",
+          "source_id": "S2",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Existing dashboard task is in review.",
+          "source_id": "task-dashboard",
+          "source_type": "task"
+        }
+      ],
+      "model_id": "deterministic-test-assessor",
+      "proposed_task": {
+        "billable": false,
+        "reason": "Use the one unused revision round in the signed scope.",
+        "requires_owner_review": false,
+        "status": "open",
+        "title": "Apply remaining dashboard revision"
+      },
+      "request_id": "req-revision",
+      "scope_version": 1,
+      "summary": "The request uses the remaining included dashboard revision."
+    }
+  },
+  "cursor": "request:req-addition",
+  "internal_tasks": {
+    "task:fairchange:req-addition": {
+      "billable": true,
+      "created_at": "2026-09-09T10:49:07Z",
+      "evidence": [
+        {
+          "excerpt": "Could you add routing for our UK and Canada teams? We can skip the administrator training if that lets us stay within the budget.",
+          "source_id": "req-addition",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Additional countries and regional routing rules are excluded. Any paid addition or deliverable substitution requires consultant authorization and client acceptance.",
+          "source_id": "S4",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Provide a four-hour administrator training session. This deliverable has not started and has no downstream dependencies.",
+          "source_id": "S3",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Approved four-hour estimate.",
+          "source_id": "regional-routing-extension",
+          "source_type": "estimate"
+        },
+        {
+          "excerpt": "The current project covers the US workflow. We can discuss other regions separately once you know the requirements.",
+          "source_id": "email-001",
+          "source_type": "correspondence"
+        }
+      ],
+      "id": "task:fairchange:req-addition",
+      "reason": "Assess excluded regional work and possible training substitution.",
+      "request_id": "req-addition",
+      "requires_owner_review": true,
+      "status": "review",
+      "title": "Prepare owner-review proposal for UK and Canada routing"
+    },
+    "task:fairchange:req-defect": {
+      "billable": false,
+      "created_at": "2026-09-09T10:49:07Z",
+      "evidence": [
+        {
+          "excerpt": "Qualifying US leads are being assigned to an inactive rep. Please fix the routing.",
+          "source_id": "req-defect",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Configure one US inbound lead routing workflow. Every qualifying lead must be assigned to an active representative.",
+          "source_id": "S1",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Correct failures against agreed acceptance criteria without an additional fee.",
+          "source_id": "S5",
+          "source_type": "scope"
+        }
+      ],
+      "id": "task:fairchange:req-defect",
+      "reason": "Restore the agreed US lead-routing behavior.",
+      "request_id": "req-defect",
+      "requires_owner_review": false,
+      "status": "open",
+      "title": "Fix inactive-representative routing defect"
+    },
+    "task:fairchange:req-revision": {
+      "billable": false,
+      "created_at": "2026-09-09T10:49:07Z",
+      "evidence": [
+        {
+          "excerpt": "For our remaining dashboard revision, please move the conversion chart above the pipeline chart.",
+          "source_id": "req-revision",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Deliver one sales dashboard with two revision rounds. One round remains unused.",
+          "source_id": "S2",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Existing dashboard task is in review.",
+          "source_id": "task-dashboard",
+          "source_type": "task"
+        }
+      ],
+      "id": "task:fairchange:req-revision",
+      "reason": "Use the one unused revision round in the signed scope.",
+      "request_id": "req-revision",
+      "requires_owner_review": false,
+      "status": "open",
+      "title": "Apply remaining dashboard revision"
+    }
+  },
+  "processed_event_ids": [
+    "request:req-defect",
+    "request:req-revision",
+    "request:req-addition"
+  ]
+}

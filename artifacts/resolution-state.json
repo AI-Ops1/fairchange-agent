@@ -1,0 +1,123 @@
+{
+  "acceptances": {
+    "proposal:demo-crm-001:req-addition:v1": {
+      "accepted_scope_version": 2,
+      "change_id": "change:proposal:demo-crm-001:req-addition:v1:accepted",
+      "client_accepted_at": "2026-09-09T11:53:01Z",
+      "client_id": "client-demo",
+      "content_hash": "sha256:b20f5b749c638669458a81ec9fd15e27e188a630323d232f27409e6a8e3a0fa8",
+      "delivery_task_id": "task:req-addition:delivery:v1",
+      "owner_authorized_at": "2026-09-09T11:53:01Z",
+      "owner_id": "owner-demo",
+      "proposal_id": "proposal:demo-crm-001:req-addition:v1",
+      "proposal_version": 1
+    }
+  },
+  "delivery_tasks": {
+    "task:req-addition:delivery:v1": {
+      "billable": true,
+      "content_hash": "sha256:b20f5b749c638669458a81ec9fd15e27e188a630323d232f27409e6a8e3a0fa8",
+      "created_at": "2026-09-09T11:53:01Z",
+      "id": "task:req-addition:delivery:v1",
+      "proposal_id": "proposal:demo-crm-001:req-addition:v1",
+      "request_id": "req-addition",
+      "requires_owner_review": false,
+      "status": "ready"
+    }
+  },
+  "proposals": {
+    "proposal:demo-crm-001:req-addition:v1": {
+      "content_hash": "sha256:b20f5b749c638669458a81ec9fd15e27e188a630323d232f27409e6a8e3a0fa8",
+      "evidence": [
+        {
+          "excerpt": "Could you add routing for our UK and Canada teams? We can skip the administrator training if that lets us stay within the budget.",
+          "source_id": "req-addition",
+          "source_type": "request"
+        },
+        {
+          "excerpt": "Configure one US inbound lead routing workflow. Every qualifying lead must be assigned to an active representative.",
+          "source_id": "S1",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Additional countries and regional routing rules are excluded. Any paid addition or deliverable substitution requires consultant authorization and client acceptance.",
+          "source_id": "S4",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "Provide a four-hour administrator training session. This deliverable has not started and has no downstream dependencies.",
+          "source_id": "S3",
+          "source_type": "scope"
+        },
+        {
+          "excerpt": "work_id: administrator-training, status: not_started, scope_clause: S3",
+          "source_id": "task-training",
+          "source_type": "task"
+        },
+        {
+          "excerpt": "work_id: us-routing, status: delivered, scope_clause: S1",
+          "source_id": "task-routing",
+          "source_type": "task"
+        },
+        {
+          "excerpt": "Approved estimate: 4 hours at USD 150.00/hour.",
+          "source_id": "regional-routing-extension",
+          "source_type": "estimate"
+        },
+        {
+          "excerpt": "Training estimate: 4 hours at USD 150.00/hour; deliverable is unstarted and proposed as a possible substitution.",
+          "source_id": "administrator-training",
+          "source_type": "estimate"
+        }
+      ],
+      "list_price_usd": 600.0,
+      "net_price_usd": 0.0,
+      "owner_authorized_at": "2026-09-09T11:53:01Z",
+      "owner_id": "owner-demo",
+      "owner_status": "authorized",
+      "price_basis": [
+        {
+          "amount_usd": 600,
+          "hours": 4,
+          "label": "UK and Canada regional routing",
+          "note": "Synthetic owner estimate; requires no migration. Four delivery hours must be scheduled.",
+          "rate_usd_per_hour": 150,
+          "source_id": "regional-routing-extension",
+          "work_id": "regional-routing-extension"
+        },
+        {
+          "amount_usd": 600,
+          "hours": 4,
+          "label": "Administrator training credit",
+          "note": "Unstarted and eligible to propose for substitution, subject to client acceptance.",
+          "rate_usd_per_hour": 150,
+          "source_id": "administrator-training",
+          "work_id": "administrator-training"
+        }
+      ],
+      "project_id": "demo-crm-001",
+      "proposal_id": "proposal:demo-crm-001:req-addition:v1",
+      "proposal_version": 1,
+      "proposed_message": "Hi Example Harbor Services team,\n\nWe reviewed your request for UK and Canada routing. Those regional rules are outside the signed scope under S4. We propose replacing the unstarted administrator training deliverable with the requested routing work. The routing price basis is USD 600.00 (4 hours \u00d7 USD 150.00/hour), with a USD 600.00 credit for the training deliverable, making the proposed net change USD 0.00.\n\nThis is a proposal to revise the deliverables. It requires owner authorization and your explicit acceptance. No work will begin until both approvals are recorded.",
+      "recommended_option": "substitute-training",
+      "request_id": "req-addition",
+      "scope_version": 1,
+      "summary": "The requested UK and Canada routing is excluded by S4. This draft offers a budget-neutral substitution of the unstarted administrator training deliverable, subject to owner authorization and client acceptance.",
+      "title": "UK and Canada routing in place of administrator training",
+      "training_credit_usd": 600.0
+    }
+  },
+  "scope_changes": {
+    "change:proposal:demo-crm-001:req-addition:v1:accepted": {
+      "accepted_at": "2026-09-09T11:53:01Z",
+      "accepted_scope_version": 2,
+      "change_id": "change:proposal:demo-crm-001:req-addition:v1:accepted",
+      "client_id": "client-demo",
+      "content_hash": "sha256:b20f5b749c638669458a81ec9fd15e27e188a630323d232f27409e6a8e3a0fa8",
+      "owner_id": "owner-demo",
+      "proposal_id": "proposal:demo-crm-001:req-addition:v1",
+      "request_id": "req-addition",
+      "status": "accepted"
+    }
+  }
+}

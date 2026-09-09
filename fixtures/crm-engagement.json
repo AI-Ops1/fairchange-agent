@@ -1,0 +1,43 @@
+{
+  "synthetic": true,
+  "project_id": "demo-crm-001",
+  "client": "Example Harbor Services",
+  "consultancy": "Example Northstar GTM",
+  "currency": "USD",
+  "scope": {
+    "version": 1,
+    "signed_at": "2026-09-01T12:00:00Z",
+    "source_id": "sow-v1",
+    "clauses": [
+      {"id": "S1", "text": "Configure one US inbound lead routing workflow. Every qualifying lead must be assigned to an active representative."},
+      {"id": "S2", "text": "Deliver one sales dashboard with two revision rounds. One round remains unused."},
+      {"id": "S3", "text": "Provide a four-hour administrator training session. This deliverable has not started and has no downstream dependencies."},
+      {"id": "S4", "text": "Additional countries and regional routing rules are excluded. Any paid addition or deliverable substitution requires consultant authorization and client acceptance."},
+      {"id": "S5", "text": "Correct failures against agreed acceptance criteria without an additional fee."}
+    ]
+  },
+  "standing_policy": {
+    "allow_internal_defect_tasks": true,
+    "allow_included_revision_task_updates": true,
+    "allow_external_messages_without_owner_approval": false,
+    "require_client_acceptance_for_scope_change": true,
+    "conflicting_promises_require_owner_review": true
+  },
+  "approved_estimates": [
+    {"work_id": "regional-routing-extension", "hours": 4, "rate_usd_per_hour": 150, "approved_by": "fixture-owner", "note": "Synthetic owner estimate; requires no migration. Four delivery hours must be scheduled."},
+    {"work_id": "administrator-training", "hours": 4, "rate_usd_per_hour": 150, "approved_by": "fixture-owner", "note": "Unstarted and eligible to propose for substitution, subject to client acceptance."}
+  ],
+  "correspondence": [
+    {"id": "email-001", "sent_at": "2026-09-02T10:00:00Z", "text": "The current project covers the US workflow. We can discuss other regions separately once you know the requirements."}
+  ],
+  "tasks": [
+    {"id": "task-routing", "work_id": "us-routing", "status": "delivered", "scope_clause": "S1"},
+    {"id": "task-dashboard", "work_id": "sales-dashboard", "status": "review", "scope_clause": "S2"},
+    {"id": "task-training", "work_id": "administrator-training", "status": "not_started", "scope_clause": "S3"}
+  ],
+  "requests": [
+    {"id": "req-defect", "received_at": "2026-09-09T08:00:00Z", "text": "Qualifying US leads are being assigned to an inactive rep. Please fix the routing."},
+    {"id": "req-revision", "received_at": "2026-09-09T08:10:00Z", "text": "For our remaining dashboard revision, please move the conversion chart above the pipeline chart."},
+    {"id": "req-addition", "received_at": "2026-09-09T08:20:00Z", "text": "Could you add routing for our UK and Canada teams? We can skip the administrator training if that lets us stay within the budget."}
+  ]
+}

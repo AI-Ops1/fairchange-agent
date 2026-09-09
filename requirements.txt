@@ -1,0 +1,5 @@
+strands-agents[bedrock]
+bedrock-agentcore
+boto3
+pytest
+python-dotenv
