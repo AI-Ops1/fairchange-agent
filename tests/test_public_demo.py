@@ -32,3 +32,10 @@ def test_brand_mark_is_local_svg():
     assert "<svg" in svg
     assert "<title>FairChange mark</title>" in svg
     assert "linearGradient" in svg
+
+
+def test_session_case_cards_keep_a_balanced_row():
+    html = (DOCS / "external-session.html").read_text(encoding="utf-8")
+    assert ".case {" in html
+    assert "height:100%" in html
+    assert ".case .evidence { flex:1; }" in html
