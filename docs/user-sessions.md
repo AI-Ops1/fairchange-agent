@@ -11,3 +11,7 @@
 - **Consent and attribution:** this is an internal walkthrough, not an external testimonial.
 
 Independent sessions remain open. No outreach was sent without a recipient and channel explicitly approved by the founder.
+
+## Ready-to-run session kit
+
+Each external session should use a fresh anonymous session code and the same three synthetic cases (`req-defect`, `req-revision`, `req-addition`). Record only start/end timestamps, case order, whether the participant accepted the evidence trail, and one short usability note. Do not collect customer data, credentials, or identifying information. The repository's evaluation cases remain offline evidence; they are not substitutes for independent human sessions.

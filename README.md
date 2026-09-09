@@ -28,13 +28,13 @@ The fixture is fictional and contains three cases: a routing defect, an included
 - [Captioned demo video](artifacts/fairchange-demo.mp4) and [video notes](docs/demo-video.md).
 - [Submission copy](docs/submission-copy.md) and [final checklist](docs/submission-checklist.md).
 
-Public demo: [ai-ops1.github.io/fairchange-agent](https://ai-ops1.github.io/fairchange-agent/). It presents synthetic judging fixtures; the AgentCore runtime itself remains IAM-authenticated.
+Public demo: [ai-ops1.github.io/fairchange-agent](https://ai-ops1.github.io/fairchange-agent/). It presents synthetic judging fixtures; the AgentCore runtime is protected by a Cognito JWT authorizer and is not proxied through the browser demo.
 
 ## Deployment status
 
 The AgentCore runtime is deployed in `eu-north-1` and has been verified with the `req-defect` fixture. The invocation returned HTTP 200 and produced an evidence-backed defect assessment citing scope clauses S1 and S5 with a non-billable corrective task.
 
-The runtime is IAM-authenticated. Do not put AWS credentials in a browser or commit them to this repository. The local HMAC token flow is test-only and must be replaced by the production identity provider before handling real client work.
+The runtime uses an Amazon Cognito user pool as its production identity provider. AgentCore validates the bearer JWT at the runtime boundary before the FairChange entrypoint runs; IAM remains the AWS deployment and administration path. Do not put AWS credentials or bearer tokens in a browser bundle or commit them to this repository. The local HMAC token flow is test-only.
 
 ## Run locally
 
@@ -70,7 +70,7 @@ These commands use synthetic data and local test identities only.
 
 ## Invoke the deployed runtime
 
-Set the runtime ARN in your shell and use an AWS-authenticated principal with permission to invoke AgentCore:
+Set the runtime ARN in your shell and use an AWS-authenticated principal with permission to invoke AgentCore for the administrative smoke path:
 
 ```powershell
 $env:FAIRCHANGE_RUNTIME_ARN = "<your-agent-runtime-arn>"
@@ -87,6 +87,8 @@ Get-Content response.json
 ```
 
 The runtime also accepts a `prompt` payload for exploratory testing, but the fixture `request_id` path is the reproducible judging path.
+
+For the production user path, obtain a Cognito access token from the configured user pool and send it as `Authorization: Bearer <token>` to the AgentCore runtime endpoint. The deployed configuration and verification evidence are documented in [authentication](docs/authentication.md).
 
 ## Repository layout
 

@@ -17,3 +17,7 @@ The runtime was verified with:
 ```
 
 It returned status code 200 and a structured defect assessment. The public judging page is available at `https://ai-ops1.github.io/fairchange-agent/`; it presents synthetic fixture results and does not proxy AWS credentials or invoke the protected runtime from the browser. A live public invocation endpoint remains a separate production integration step.
+
+## Production identity boundary
+
+The runtime's active version uses an Amazon Cognito custom JWT authorizer in `eu-north-1`. AgentCore validates the Cognito discovery document and the allowed public app client before dispatching to `main.py`; the application code does not receive unauthenticated requests. See [authentication.md](authentication.md) for the exact configuration shape and smoke-test evidence.
