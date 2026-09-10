@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="FairChange mark">
+  <title>FairChange mark</title>
+  <defs>
+    <linearGradient id="path-gradient" x1="18" y1="102" x2="110" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8AF0C0"/>
+      <stop offset="0.52" stop-color="#B8B1FF"/>
+      <stop offset="1" stop-color="#FF9C8E"/>
+    </linearGradient>
+    <linearGradient id="glow-gradient" x1="22" y1="22" x2="108" y2="106" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#263451"/>
+      <stop offset="1" stop-color="#151B30"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="34" fill="url(#glow-gradient)" stroke="#3C4A68" stroke-width="2"/>
+  <path d="M29 92V36c0-5 4-9 9-9h30c6 0 11 5 11 11s-5 11-11 11H43" fill="none" stroke="url(#path-gradient)" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+  <path d="M43 70h23c6 0 11 5 11 11s-5 11-11 11H43" fill="none" stroke="url(#path-gradient)" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+  <circle cx="29" cy="36" r="7" fill="#8AF0C0"/>
+  <circle cx="29" cy="92" r="7" fill="#FF9C8E"/>
+  <circle cx="97" cy="47" r="7" fill="#B8B1FF"/>
+</svg>
