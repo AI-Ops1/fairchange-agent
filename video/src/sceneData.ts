@@ -25,11 +25,3 @@ export const FULL_SCENES: VideoScene[] = [
   { id: "session", label: "10 · Independent session", from: 170, duration: 15, kind: "session", eyebrow: "Separate usability kit", title: "Let an outside participant try it.", body: "Anonymous, local, synthetic, and independent.", accent: "#8af0c0" },
   { id: "close", label: "11 · Close", from: 185, duration: 10, kind: "close", eyebrow: "FairChange", title: "Make scope decisions explainable.", body: "Before they become commercial surprises.", accent: "#8af0c0" },
 ];
-
-export const TRAILER_SCENES: VideoScene[] = [
-  { ...FULL_SCENES[0], id: "trailer-hook", from: 0, duration: 8 },
-  { ...FULL_SCENES[3], id: "trailer-flow", from: 8, duration: 9 },
-  { ...FULL_SCENES[6], id: "trailer-scope", from: 17, duration: 10 },
-  { ...FULL_SCENES[7], id: "trailer-gate", from: 27, duration: 10 },
-  { ...FULL_SCENES[10], id: "trailer-close", from: 37, duration: 8 },
-];

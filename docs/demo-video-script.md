@@ -1,6 +1,6 @@
 # FairChange video script
 
-This is the voiceover handoff for the premium 1080p judging video and its shorter trailer. The judging cut is designed for a **3:15 runtime** at 30 fps. The trailer is a **0:45 cutdown** using the same visual language. Record one take per scene and one continuous take at the same pace; the edit can replace either version without changing the motion design.
+This is the voiceover handoff for the premium 1080p judging video. The judging cut is designed for a **3:15 runtime** at 30 fps. Record one take per scene and one continuous take at the same pace; the edit can replace either version without changing the motion design.
 
 ## Full judging cut — 3:15
 
@@ -25,9 +25,3 @@ This is the voiceover handoff for the premium 1080p judging video and its shorte
 - Emphasize **defect**, **included work**, **scope change**, and **human gate**.
 - Record clean mono or stereo WAV at 48 kHz if possible; keep the room quiet and leave a few seconds of room tone at the start and end.
 - Do not read the on-screen labels that are already obvious; the narration should explain why each outcome is safe.
-
-## Trailer — 0:45
-
-“Every implementation team gets change requests. The hard part is knowing what the signed scope already covers. FairChange retrieves the evidence, classifies the request as a defect, included work, or scope change, and explains the next safe action. When money or scope is involved, the agent stops at a human gate: owner review, then exact client acceptance. FairChange automates the search. People own the commitment.”
-
-Use the hook request card, the four-stage flow, a rapid three-outcome montage, the human gate, and the logo close. Keep captions on every spoken word and end on the public demo URL.

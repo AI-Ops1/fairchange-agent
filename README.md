@@ -40,7 +40,7 @@ The fixture is fictional and contains three cases: a routing defect, an included
 - [User-session notes](docs/user-sessions.md) — current evidence and open validation work.
 - [Independent session kit](docs/external-session.html) and [session protocol](docs/external-session-guide.md) — anonymous, no-login usability session for outside consultants.
 - [Video notes](docs/demo-video.md). The final judging cut is hosted externally for the submission.
-- [Premium video script](docs/demo-video-script.md) and [Remotion project](video/README.md) — 3:15 judging cut plus 0:45 trailer.
+- [Premium video script](docs/demo-video-script.md) and [Remotion project](video/README.md) — 3:15 judging cut.
 - [Submission copy](docs/submission-copy.md) and [final checklist](docs/submission-checklist.md).
 - [Audit report](docs/audit-2026-09-09.md) — code, runtime, and submission-gate review.
 
